@@ -1,0 +1,30 @@
+div {
+    font-size: 70px;
+}
+/* 일치 선택자 */
+div.hello{
+    color:red;
+}
+.hello{
+    color:green;
+}
+
+/* 전체 선택자 */
+*{
+
+}
+
+/* 태그 선택자 */
+div{
+
+}
+
+/* 클래스 선택자 */
+.hello{
+
+}
+
+/* id 선택자 */
+#hello{
+    
+}

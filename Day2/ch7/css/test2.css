@@ -1,0 +1,20 @@
+[type = "password"] {
+    background-color: orange;
+}
+[data-fruit-name]{
+    color:red;
+}
+.parent{
+    width:300px;
+    height: 200px;
+    background-color: red;
+}
+.child{
+    width:100px;
+    height: inherit; 
+    /* inherit 부모 속성을 '강제 상속' */
+    background-color: inherit;
+    position: fixed;
+    top:100px;
+    right: 10px;
+}
