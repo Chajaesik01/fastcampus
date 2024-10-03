@@ -1,0 +1,48 @@
+.container{
+    background-color: royalblue;
+    display: flex;
+    /* 수평 정렬
+    Flext Container가 되고 그 안에 있는 
+    item들은 수평정렬되며 Flex item이 된다.
+    flex : 블록 요소와 같이 Flex Container 정의
+    flex container라고 부르고, 자식 요소는 items이다.
+
+    inline-flex 인라인 요소와 같이 Flex Container
+    inline은 최소의 범위만을 사용하려고 하는 특징 정의 */
+    /*flex-direction: row-reverse;
+     주 축을 설정 */
+     /* flex-direction: column; , 기본값은 row*/
+     /* flex-wrap 요소들 줄 바꿈 처리 */
+     width: 500px;
+     height: 300px;
+     flex-wrap: wrap;
+     /* justify-content 수평(주 축)의 정렬 방법 */
+     /* align-content 수직(교차) 축의 여러줄(2줄 이상) 정렬 방법 */
+     /* 기본값은 stretch, 늘어남. */
+    /* align-items 수직(교차) 축의 한 줄 정렬 방법 */
+    justify-content: center;
+    align-items: flex-end;
+
+}
+.container .item{
+    width: 100px;
+    height: 100px;
+    border: 3px dashed red;
+    background-color: orange;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.container .item:nth-child(3){
+    /* floex-grwo 증가 너비 */
+    /* content의 부분을 제외하고 비율을 나눈다. */
+    flex-grow: 2;
+    /* order 기본값은 0, 수가 작을 수록 앞에 위치, -1 같은 음수의 값도 갖을 수 있음 */
+     /* flex-shrink flex item의 감소 너비, 기본값은 0, 1이면 content의 
+     원형을 유지한다. */
+     /* flex-basis Flex Item의 공간 배분 전 기본 너비*/
+    /* content의 내용 구성 */
+
+
+
+
+}

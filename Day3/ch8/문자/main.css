@@ -1,0 +1,19 @@
+a {
+    display: block;
+    width:200px;
+    height: 100px;
+    background-color: orange;
+    font-size: 22px;
+    color : white;
+    text-decoration: none;
+    text-align: center;
+    /* 문자를 수평정렬 */
+    line-height: 100px;
+}
+
+p {
+    font-size: 24px;
+    text-indent: 50px;
+    /* 문자 첫 줄의 들여쓰기 
+    내어쓰기는 음수를 사용하여 적용*/
+}

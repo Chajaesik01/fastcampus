@@ -26,5 +26,7 @@ div{
 
 /* id 선택자 */
 #hello{
-    
+
 }
+
+/* !import나 inline선언은 가급적 사용하지 않는다. */

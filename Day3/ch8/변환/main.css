@@ -1,0 +1,30 @@
+body {
+    padding: 100px;
+}
+.container{
+    width: 100px;
+    height: 100px;
+    background-color: royalblue;
+    perspective: 250px;
+}
+.container .item {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    font-size: 60px;
+    /* 아래 3개의 명령을 통해 정중앙에 위치하게 한다. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transform: perspective(150px) rotateX(45deg) translateX(100px);
+    /* 원근법 함수  */ 
+    /*               원근법(원근 거리) */
+    /* perspective 함수는 목록의 제일 앞에 위치해야한다. */
+    /* transform: perspective(500px) rotateX(45deg) */
+
+    /* perspective 속성 : 관찰 대상의 부모
+    transform: perspeictive(500px) 직접 지정 */
+     /* backface-visibility 3D 변환으로 회전된 요소의 뒷면 숨김 여부 */
+    transform : rotateY(200deg);
+    backface-visibility: hidden;
+}

@@ -1,0 +1,43 @@
+body{
+    height: 3000px;
+}
+.container{
+    width:300px;
+    background-color: royalblue;
+    /*
+    position: relative;
+    요소의 위치 기준, 
+    요소 자신을 기준 */
+    position: relative;
+}
+.container .item{
+    border: 4px dashed red;
+    background-color: orange;
+}
+.container .item:nth-child(1){
+    width: 100px;
+    height: 100px;
+    position:relative;
+    z-index: 1;
+}
+.container .item:nth-child(2){
+    width: 140px;
+    height: 70px;
+    /*position: absolute;
+     위치 상 부모 요소를 기준 */
+     position: absolute;
+     top: 50px;
+     left: 60px;
+    
+}
+.container .item:nth-child(3){
+    width: 70px;
+    height: 120px;
+    z-index: 2;
+}
+
+.wrap{
+    width:400px;
+    height: 300px;
+    background-color: tomato;
+}

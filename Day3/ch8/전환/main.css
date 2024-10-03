@@ -1,0 +1,19 @@
+div{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    transition: 1s .5s; 
+    /* 전환 지속 효과를 1초, 딜레이는 0.5초 설정 */
+    
+    /* transition : 속성명 지속시간 타이밍함수 대기시간 */
+    /* trainsition-property : 전환 효과를 사용할 속성 이름을 지정 */
+    /* transition-duration 전환 효과의 지속시간을 지정 */
+    /* transition-timing-function 전환 효과의 타이밍(Easing) 함수를 지정 */
+
+
+
+}
+div:active{
+    width: 300px;
+    background-color: royalblue;
+}

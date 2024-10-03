@@ -1,0 +1,11 @@
+body{
+    margin: 20px;
+}
+span{
+    /* inline 요소에도 가로 세로 값을 지정할 수 있다. */
+    display: block;
+    width: 120px;
+    height:30px;
+    background-color: royalblue;
+    color:wheat
+}

@@ -1,0 +1,20 @@
+h1{
+    font-size: 24px;
+    /* font-size 긎라의 크기 */
+    font-weight: 700;
+    /* font-weight 글자의 두께 */
+    font-style: italic;
+    /* font-style : 글자의 기울기 */
+    font-family: serif;
+    /* font-family : 글꼴(서체) 지정 */
+}
+
+p{
+    width: 350px;
+    padding: 10px;
+    border: 1px solid;
+    box-sizing: border-box;
+    line-height:  1.4;
+    /* line-height : 한줄의 높이, 행간과 유사
+    배수를 입력하는게 관리가 용이 */
+}
