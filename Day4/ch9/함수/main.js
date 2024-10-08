@@ -25,7 +25,7 @@ console.log(A,b);
 // let world = function(){
 // console.log('World');
 // }
-//world();   //World
+//world();   함수 호출 //World
 
 const heropy = {
     name: 'HEROPY',
