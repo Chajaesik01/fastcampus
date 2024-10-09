@@ -123,6 +123,14 @@ fixed | 뷰포트 | X
 title="NAVER로 이동!"
 target="_blank">NAVER</a>
 
+---
+
 <img width="70" src="https://res.cloudinary.com/linkareer/image/fetch/f_auto,q_50/https://api.linkareer.com/attachments/392765)](https://vitamin3000.tistory.com/" alt = ""/>
 
+# 수평선(Horizontal Rule)
+
+---
+
+***
+___
 
