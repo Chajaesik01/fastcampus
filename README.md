@@ -19,3 +19,11 @@
 https://vitamin3000.tistory.com/
 
 [링크](https://vitamin3000.tistory.com/)로 바로 가기!
+
+
+# 진행한 프로젝트 🌟
+
+## 1. 온보딩 프로젝트  
+### 수영일기 | 내 주변 수영장 찾기 
+https://github.com/Dev-FE-2/3_swim_diary<br>
+[링크](https://github.com/Dev-FE-2/3_swim_diary)로 바로 가기!
