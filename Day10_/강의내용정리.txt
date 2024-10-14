@@ -1,0 +1,13 @@
+npm install 라이브러리 -D 
+-D 옵션의 차이
+package.json 파일에 있으면  "devDependencies"에, 없으면   "dependencies"에 설치됨
+devDependencies : 개발용 의존성 패키지 설치(개발할 때만 필요, 일반 브라우저에서는 필요하지 않다)
+dependencies : 일반 의존성 설치(일반 브라우저에서 동작시 필요한 경우)
+
+--유의적 버젼-- SemVer
+
+Major.Minor.Patch
+Major : 기존 버전과 호환되지 않는 새로운 버전
+Minor : 기존 버전과 호환되는 새로운 기능이 추거된 버전
+Patch :  기존 버전과 호환되는 버그 및 오타 등이 수정된 버전
+^Major.Minor.Patch : Major 버전 안에서 가장 최신 버전으로 업데이트 가능
