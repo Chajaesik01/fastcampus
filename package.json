@@ -1,0 +1,28 @@
+{
+  "name": "fastcampus",
+  "version": "1.0.0",
+  "description": "[![김민태의 데브캠프](https://res.cloudinary.com/linkareer/image/fetch/f_auto,q_50/https://api.linkareer.com/attachments/392765)](https://vitamin3000.tistory.com/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chajaesik01/fastcampus.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chajaesik01/fastcampus/issues"
+  },
+  "homepage": "https://github.com/Chajaesik01/fastcampus#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "lodash": "4.17.20"
+  }
+}
