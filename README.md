@@ -12,18 +12,25 @@
 --|:--:|--:
 9월23일~9월 27일 | Git/Github |   
 9월 30일~ 10월 4일|  HTML/CSS | 
-10월 7일 ~ 10월 11일 | javascript |  
+10월 7일 ~ 10월 11일 | Basic JavaScript |  
+10월 14일 ~ 10월 18일 | Intermediate JavaScript |
+10월 25일 ~ 11월 7일 | Toy Project 1|
+
 
 # 기록 블로그 🌟
 
 https://vitamin3000.tistory.com/
 
-[링크](https://vitamin3000.tistory.com/)로 바로 가기!
 
 
 # 진행한 프로젝트 🌟
 
 ## 1. 온보딩 프로젝트  
 ### 수영일기 | 내 주변 수영장 찾기 
-https://github.com/Dev-FE-2/3_swim_diary<br>
-[링크](https://github.com/Dev-FE-2/3_swim_diary)로 바로 가기!
+https://github.com/Chajaesik01/devcamp-onboarding-swimdiary
+
+
+## 2.토이 프로젝트 1
+###  효율적인 수강생 관리와 소통을 위한 도파밍의 인트라넷 서비스
+
+https://github.com/Dev-FE-2/toy-project1-team2-intranet-project
