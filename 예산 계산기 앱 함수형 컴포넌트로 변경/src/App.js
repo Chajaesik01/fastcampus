@@ -13,9 +13,11 @@ export const App = () => {
     { id: 3, charge: "식비", amount: 1200 },
     { id: 4, charge: "헬스비용", amount: 2000 }
   ]);
+  const [id, setId] = useState('');
 
   const [alert, setAlert] = useState({show:false})
 
+  const [edit, setEdit] = useState(false);
   const handleCharge = (e) => {
     setCharge(e.target.value);
   }
@@ -37,20 +39,45 @@ export const App = () => {
     },7000)
   }
 
+  const handleEdit = (id) => {
+    const expense = expenses.find(item => item.id === id);
+    const { charge, amount} = expense;
+    setId(id);
+    setCharge(charge);
+    setAmount(amount);
+    setEdit(true);
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (charge !== "" && amount > 0) {
-      const newExpense = { id: Date.now(), charge: charge, amount: amount }; // Date.now()로 ID 생성
-      
-      // 배열에 새 항목 추가
-      setExpenses([...expenses, newExpense]); // 배열에 새 항목 추가
+      if(edit){
+        const newExpenses = expenses.map(item => {
+          return item.id === id ? {...item, charge: charge, amount: amount} : item
+        })
+
+        setExpenses(newExpenses);
+        setEdit(false);
+        handleAlert({type : 'succcess', text: '아이템이 수정되었습니다.'});
+
+      }else {
+        const newExpense = { id: Date.now(), charge: charge, amount: amount };
+        setExpenses([...expenses, newExpense]);
+        handleAlert({type: 'success', text:'아이템이 생성되었습니다.'})
+      }
       setCharge("");
       setAmount(0);
-      handleAlert({type: 'success', text:'아이템이 생성되었습니다.'})
-    } else {
-      console.log("error");
-      handleAlert({type: 'danger', text: 'charge는 빈 값일 수 없으며 amount는 0보다 커야 합니다.'})
-    }
+      } else {
+            console.log("error");
+            handleAlert({type: 'danger', text: 'charge는 빈 값일 수 없으며 amount는 0보다 커야 합니다.'})
+
+          }
+  }
+
+  const clearItems = () => {
+    setExpenses([]);
+
+
   }
 
   return (
@@ -61,6 +88,7 @@ export const App = () => {
         <ExpenseForm
           handleCharge={handleCharge}
           charge={charge}
+          edit = {edit}
           handleAmount={handleAmount}
           amount={amount}
           handleSubmit={handleSubmit}
@@ -68,14 +96,20 @@ export const App = () => {
       </div>
       <div style={{ width: '100%', backgroundColor: 'white', padding: '1rem' }}>
         <ExpenseList
-          initialExpenses={expenses}
+          expenses={expenses}
           handleDelete={handleDelete}
+          handleEdit={handleEdit}
+          clearItems={clearItems}
         />
       </div>
       <div style={{ display: 'flex', justifyContent: 'end', marginTop: '1rem' }}>
         <p style={{ fontSize: '2rem' }}>
           총 지출 :
-          <span>원</span>
+          <span>
+            {expenses.reduce((acc, curr) =>{
+              return (acc += curr.amount)
+            }, 0)}
+            원</span>
         </p>
       </div>
     </main>
