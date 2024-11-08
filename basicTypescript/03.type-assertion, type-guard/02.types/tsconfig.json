@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "rootDir": "./src", 
+        "outDir": "./build/js",
+        "target": "ES6",
+        "noEmitOnError": true,
+        //on과 false의 차이는 Emit 배출한다
+        //true인 경우 에러가 있을 때는 Emit 안한다
+        "module" : "ESNext",
+        "moduleResolution": "Node",
+        "esModuleInterop": true,
+        "lib" : ["ESNext", "DOM"],
+  
+
+    },
+    "include":[
+        "./src/**/*ts",
+    ]
+}
