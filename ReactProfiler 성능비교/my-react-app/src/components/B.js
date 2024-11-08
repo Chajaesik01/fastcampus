@@ -2,17 +2,28 @@ import React from 'react'
 
 
 // 역할을 나눠 컴포넌트를 구성
-const Message = React.memo(({message}) => {
+
+const Message = ({message}) => {
   return <p>{message}</p>
-})
-const ListItem = ({post}) =>{
+};
+
+/*
+function compareFunction(prevProps, nextprops){
+  return (
+    prevProps.a === nextprops.a &&
+    prevProps.b === nextprops.b 
+  )
+}
+*/
+const ListItem = React.memo(({post}) =>{
   return(
     <li key = {post.id}>
       <p>{post.title}</p>
     </li>
   )
-}
-const List = ({posts}) =>{
+})
+const List = React.memo(({posts, testFunction}) =>{
+  console.log('List component is Rendering')
   return (
     <ul>
       {posts.map(post => (
@@ -20,9 +31,11 @@ const List = ({posts}) =>{
       ))}
     </ul>
   )
-}
+})
 
-export const B = ({message, posts}) => {
+export const B = React.memo(({message, posts}) => {
+  console.log('B component is Rendering');
+  const testFunction = useCallback(() => {}, []);
   return (
     <div>
       <h1>B Component</h1>
@@ -30,4 +43,5 @@ export const B = ({message, posts}) => {
       <List posts = {posts} />
     </div>
   )
-}
+})
+
