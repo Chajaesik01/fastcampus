@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "rootDir": "./src", 
+        "outDir": "./build/js",
+        "target": "ES6",
+        "noEmitOnError": true,
+        "module" : ["ESNext", "DOM"],
+        //타입스크립트 컴파일러가 모듈을 찾는 방법
+        // 경로가 상대적인지, 절대적인지 확인
+        "moduleResolution": "Node",
+        "esModuleInterop": true,
+        "lib" : ["ESNext", "DOM"],
+        // 0순위 : baseUrl
+        "baseUrl": "./",
+        "isolatedModules": true,
+        "removeComments": true,
+        "allowJs": true,
+        "checkJs": true, // 타입스크립트 소스의 주석을 모두 제거 
+        
+        
+
+    },
+    "include":[
+        "./src/**/*ts",
+    ]
+}
