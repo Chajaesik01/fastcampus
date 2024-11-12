@@ -8,8 +8,9 @@ const AutoComplete = ({ allPokemons, setSearchTerm }) => {
         setSearchTerm(value);
 
         if (value.length > 0) {
+            // 입력된 값이 포켓몬 이름의 시작 부분에 포함된 경우를 필터링
             const filteredSuggestions = allPokemons.filter(pokemon =>
-                pokemon.name.toLowerCase().includes(value.toLowerCase())
+                pokemon.name.toLowerCase().startsWith(value.toLowerCase())
             );
             setSuggestions(filteredSuggestions);
         } else {
