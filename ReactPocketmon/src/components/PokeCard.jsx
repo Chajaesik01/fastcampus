@@ -6,7 +6,9 @@ const PokeCard = ({ url, name }) => {
     const [pokemon, setPokemon] = useState();
 
     useEffect(() => {
-        fetchPokeDetailData();
+        if (url) {
+            fetchPokeDetailData();
+        }
     }, [url]);
 
     async function fetchPokeDetailData() {
