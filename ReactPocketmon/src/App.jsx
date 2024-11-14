@@ -1,12 +1,25 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useState, useRef, useEffect} from 'react';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import DetailPage from './pages/DetailPage'; // 오타 수정
 import MainPage from './pages/MainPage'; // 대문자 수정
 import LoginPage from './pages/LoginPage'; 
+import { NavBar } from './components/NavBar';
 const App = () => {
   const [count, setCount] = useState(0);
   const countRef = useRef(0);
   const [value, setValue] = useState(''); // value 상태 추가
+
+  const Layout = () => {
+    return(
+      <>
+        <NavBar />
+        <br />
+        <br />
+        <br />
+        <Outlet/>
+      </>
+    )
+  }
   let countVariable = 0;
   const renderCountRef = useRef(0);
 
@@ -39,12 +52,15 @@ const App = () => {
       <button onClick={increaseRef}>Ref +</button>
       <button onClick={increaseState}>State +</button>
       <button onClick={increaseVariable}>Variable +</button> */}
+      
 
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="login" element={<LoginPage/>}/>
-          <Route path="/pokemon/:id" element={<DetailPage />} /> {/* 오타 수정 */}
+          <Route path ="/" element = {<Layout/>}>
+            <Route index element={<MainPage />} />
+            <Route path="login" element={<LoginPage/>}/>
+            <Route path="/pokemon/:id" element={<DetailPage />} /> {/* 오타 수정 */}
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
