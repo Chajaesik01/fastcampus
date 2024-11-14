@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import PokeCard from '../../components/PokeCard';
 import AutoComplete from '../../components/AutoComplete';
+import DamageModal from '../../components/DamageModal';
 
 function MainPage() {
   // 모든 포켓몬 데이터를 가지고 있는 state
@@ -12,6 +13,9 @@ function MainPage() {
   
   // 검색어 상태
   const [searchTerm, setSearchTerm] = useState("");
+
+  // 모달 상태
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // 한번에 보여지는 포켓몬 수
   const limitNum = 20;
@@ -79,6 +83,22 @@ function MainPage() {
           </button>
         )}
       </div>
+      {/* 모달 열기 및 닫기 버튼 */}
+      <div className='text-center'>
+        <button
+          onClick={() => setIsModalOpen(true)} 
+          className='bg-blue-500 px-4 py-2 rounded-lg text-white'>
+          모달 열기
+        </button>
+      </div>
+      
+      {/* 모달 항상 출력 */}
+      {isModalOpen && (
+        <DamageModal 
+          isOpen={isModalOpen} 
+          onClose={() => setIsModalOpen(false)} 
+        />
+      )}
     </article>
   );
 }
