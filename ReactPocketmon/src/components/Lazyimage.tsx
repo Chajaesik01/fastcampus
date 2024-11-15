@@ -1,6 +1,11 @@
 import React, {useState, useEffect} from 'react'
 
-const Lazyimage = ({url, name}) => {
+interface LazyImageProps {
+    url: string;
+    alt: string;
+
+}
+const Lazyimage = ({url, alt}: LazyImageProps) => {
 
     const [isLoading, setIsLoading ] = useState(true);
     const [opacity, setOpacity] = useState('opacity-0');
@@ -19,7 +24,7 @@ const Lazyimage = ({url, name}) => {
 
         <img
         src={url}
-        alt={name}
+        alt={alt}
         width="100%"
         height="auto"
         loading="lazy"

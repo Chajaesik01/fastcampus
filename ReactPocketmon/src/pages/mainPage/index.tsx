@@ -3,13 +3,14 @@ import axios from 'axios';
 import PokeCard from '../../components/PokeCard';
 import AutoComplete from '../../components/AutoComplete';
 import DamageModal from '../../components/DamageModal';
+import { PokemonData, PokemonDataAndUrl } from '../../types/PokemonData';
 
 function MainPage() {
   // 모든 포켓몬 데이터를 가지고 있는 state
-  const [allPokemons, setAllPokemons] = useState([]);
+  const [allPokemons, setAllPokemons] = useState<PokemonDataAndUrl[]>([]);
   
   // 실제로 리스트로 보여주는 포켓몬 데이터를 가지고 있는 state
-  const [displayedPokemons, setDisplayedPokemons] = useState([]);
+  const [displayedPokemons, setDisplayedPokemons] = useState<PokemonDataAndUrl[]>([]);
   
   // 검색어 상태
   const [searchTerm, setSearchTerm] = useState("");
@@ -23,7 +24,7 @@ function MainPage() {
 
   const fetchPokeData = async () => {
     try {
-      const response = await axios.get(url);
+      const response = await axios.get<PokemonData>(url);
       if (response.data && response.data.results) {
         setAllPokemons(response.data.results);
         setDisplayedPokemons(response.data.results.slice(0, limitNum)); // 초기 포켓몬 데이터 설정

@@ -2,8 +2,17 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Lazyimage from './Lazyimage';
 import {Link} from'react-router-dom';
-const PokeCard = ({ url, name }) => {
-    const [pokemon, setPokemon] = useState();
+import { PokemonDataAndUrl } from '../types/PokemonData';
+import { PokemonDetail } from '../types/PokemonDetail';
+
+interface PokeData{
+    id: number;
+    type: string;
+    name: string;
+}
+
+const PokeCard = ({ url, name }: PokemonDataAndUrl) => {
+    const [pokemon, setPokemon] = useState<PokeData>();
 
     useEffect(() => {
         if (url) {
@@ -21,7 +30,7 @@ const PokeCard = ({ url, name }) => {
         }
     }
 
-    function formatPokemonData(params) {
+    function formatPokemonData(params: <PokemonDetail>) {
         const { id, types, name } = params;
         const PokeData = {
             id,

@@ -2,10 +2,14 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import {getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from 'firebase/auth';
+import {User, getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from 'firebase/auth';
 import app from '../firebase'
-
-const initialUserData = localStorage.getItem('userData')? JSON.parse(localStorage.getItem('userData')) : {};
+import storage from '../utils/storage'
+const UserDataFromStorage = localStorage.getItem('userData')
+const initialUserData = storage.get<User>('userData')
+interface Location {
+    href: string;
+}
 export const NavBar = () => {
 
     const auth = getAuth(app);
@@ -16,7 +20,7 @@ export const NavBar = () => {
     
     const {pathname} = useLocation();
 
-    const [userData, setUserData] = useState(initialUserData);
+    const [userData, setUserData] = useState<User | null>(initialUserData);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -42,6 +46,7 @@ export const NavBar = () => {
             console.log(result);
             setUserData(result.user);
             localStorage.setItem('userData',JSON.stringify(result.user))
+            storage.set('userData', result.user);
         })
         .catch(error => {
             console.error(error);
@@ -50,6 +55,7 @@ export const NavBar = () => {
 
     const handleLogout = () => {
         signOut(auth).then(() => {
+            storage.remove('userData');
             setUserData(null);
 
         })
@@ -91,6 +97,12 @@ export const NavBar = () => {
         ) : 
 
         <SignOut>
+            {
+                <UserData
+                src={userData.photoURL}
+                alt="user photo"
+                />
+            }
             <UserImg
                 src={userData?.photoURL}
                 alt={"user_photo"}
@@ -159,7 +171,7 @@ const Logo = styled.a`
     margin-top: 4px;
 
 `
-const NavWrapper = styled.nav`
+const NavWrapper = styled.nav<{show: boolean}>`
     position: fixed;
     top: 0;
     left: 0;

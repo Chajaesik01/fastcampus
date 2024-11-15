@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+import { PokemonDataAndUrl } from '../types/PokemonData';
 
+interface AutoCompleteProps {
+    allPokemons: PokemonDataAndUrl[],
+    setSearchTerm: React.Dispatch<React.SetStateAction<PokemonDataAndUrl[]>>
+}
 const AutoComplete = ({ allPokemons, setSearchTerm }) => {
     const [suggestions, setSuggestions] = useState([]);
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.FormEvent<HTMLFormElement>) => {
         const value = e.target.value;
         setSearchTerm(value);
 
