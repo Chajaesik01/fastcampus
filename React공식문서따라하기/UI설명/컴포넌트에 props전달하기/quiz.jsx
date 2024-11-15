@@ -56,3 +56,35 @@ export default function Gallery() {
     </div>
   );
 }
+
+
+// 2.
+
+import { getImageUrl } from './utils.js';
+
+function Avatar({ person, size }) {
+
+  const v = size >= 90 ? 'b' : 's';
+
+  return (
+    <img
+      className="avatar"
+      src={getImageUrl(person, v)}
+      alt={person.name}
+      width={size}
+      height={size}
+    />
+  );
+}
+
+export default function Profile() {
+  return (
+    <Avatar
+      size={160}
+      person={{ 
+        name: 'Gregorio Y. Zara', 
+        imageId: '7vQD0fP'
+      }}
+    />
+  );
+}
