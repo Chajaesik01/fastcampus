@@ -1,11 +1,11 @@
-import Profile from './Profile' // default가 아닌 경우 {}로 묵어서 호출한다.
-import Gallery from './Gallery'
+import Gallery from './Gallery.js';
+import { Profile } from './Gallery.js';
 
-  export default function Gallery() {
-    return (
-      <section>
-        <Profile />
-      </section>
+export default function App() {
+  return (
+    <>
+    <Profile />
+    <Gallery />
+    </>
     );
-  }
-  
+}
