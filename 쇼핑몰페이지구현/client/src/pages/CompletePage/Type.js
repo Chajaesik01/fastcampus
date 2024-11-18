@@ -1,12 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import Products from './Products';
 import Options from './Options';
 import ErrorBanner from './ErrorBanner';
+import { OrderContext } from '../../context/OrderContext';
+
 const Type = ({ orderType }) => {
     const [items, setItems] = useState([]);
+    const [error, setError] = useState(false);
+    const orderContext = useContext(OrderContext);
+    const orderData = orderContext ? orderContext[0] : null;
+    const upDataeItemCount = orderContext ? orderContext[1] : null;
 
-    const[error, setError] = useState(false);
     useEffect(() => {
         loadItems(orderType);
     }, [orderType]);
@@ -14,7 +19,11 @@ const Type = ({ orderType }) => {
     const loadItems = async (type) => {
         try {
             const response = await axios.get(`http://localhost:4000/${type}`);
-            setItems(response.data);
+            if (Array.isArray(response.data)) {
+                setItems(response.data);
+            } else {
+                throw new Error('응답 데이터가 배열이 아닙니다.');
+            }
         } catch (error) {
             setError(true);
             console.log(error);
@@ -31,10 +40,10 @@ const Type = ({ orderType }) => {
         />
     ));
 
-    if(error){
+    if (error) {
         return (
-           <ErrorBanner message ="에러가 발생했습니다"/>
-        )
+            <ErrorBanner message="에러가 발생했습니다" />
+        );
     }
 
     return (
