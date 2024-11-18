@@ -10,7 +10,7 @@ const [checked, setChecked] = useState(false)
             type="checkbox"
             checked={checked}
             id="confirm-checkbox"
-            onClick={(e) => setChecked(e.target.checked)}
+            onChange={(e) => setChecked(e.target.checked)}
         />
             <label htmlFor = "confirm-checkbox">
                 주문하려는 것을 체크하셨나요?
