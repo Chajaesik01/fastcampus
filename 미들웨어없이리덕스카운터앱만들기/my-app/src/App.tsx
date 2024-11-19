@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from './reducers';
+import axios from 'axios';
 
 type Props = {
     value: {
@@ -14,6 +15,17 @@ type Props = {
 function App({ value, onIncrement, onDecrement }: Props) {
     const [todoValue, setTodoValue] = useState('');
     const dispatch = useDispatch();
+
+    useEffect(() => {
+      dispatch(fetchPosts())
+    },[dispatch])
+
+    const fetchPosts = () :any => {
+      return async function fetchPostsThunk(dispatch:any, getState: any){
+        const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
+        dispatch({type: "FETCH_POSTS", payload: response.data})
+      }
+    }
 
     
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -11,8 +11,6 @@ const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 
-const store = createStore(rootReducer);
-
 const loggerMiddleware = (store: any) => (next: any) => (action: any) => {
   console.log('store : ',store);
   console.log('action : ',action);
@@ -20,6 +18,7 @@ const loggerMiddleware = (store: any) => (next: any) => (action: any) => {
 }
 
 const middleware = applyMiddleware(loggerMiddleware)
+const store = createStore(rootReducer,middleware);
 
 // 초기 상태에 TODO 추가
 store.dispatch({ 
