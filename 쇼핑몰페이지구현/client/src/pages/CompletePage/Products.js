@@ -1,6 +1,11 @@
 import React from 'react'
 
-const Products = ({name, imagePath}) => {
+const Products = ({name, imagePath, updateItemCount}) => {
+
+  const handleChange = (e) => {
+    const handleValue = e.target.value;
+    updateItemCount(name, handleValue)
+  }
   console.log(name, imagePath)
     return (
     <div style = {{textAlign : 'center'}}>
@@ -14,6 +19,7 @@ const Products = ({name, imagePath}) => {
                 name = 'quantity'
                 min = "0"
                 defaultValue={0}/>
+                onChange={handleChange}
         </form>
 
     </div>
