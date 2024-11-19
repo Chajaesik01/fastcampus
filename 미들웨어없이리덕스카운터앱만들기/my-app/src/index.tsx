@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import rootReducer from './reducers';
 import { Provider } from 'react-redux';
 
@@ -12,6 +12,14 @@ const root = ReactDOM.createRoot(
 );
 
 const store = createStore(rootReducer);
+
+const loggerMiddleware = (store: any) => (next: any) => (action: any) => {
+  console.log('store : ',store);
+  console.log('action : ',action);
+  next(action);
+}
+
+const middleware = applyMiddleware(loggerMiddleware)
 
 // 초기 상태에 TODO 추가
 store.dispatch({ 
