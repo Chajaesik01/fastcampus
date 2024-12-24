@@ -41,6 +41,15 @@ export const authOptions: NextAuthOptions = {
     session: {
         strategy: "jwt", // JWT 세션 사용
     },
+    callbacks:{
+        async jwt ({token, user}){
+            return { ...token, ...user }
+        },
+        async session({session, token}){
+            session.user = token;
+            return session;
+        }
+    },
     pages: {
         signIn: '/auth/signin', // 사용자 정의 로그인 페이지 경로
     },
