@@ -1,0 +1,11 @@
+export const logger = store => next => action => {
+
+    const currentState = store.getStore();
+
+    console.groupCollapsed('action logger = ', action.type); // 한번 클립으로 접기
+    console.log('currentState : ', currentState);
+    console.log('action payload : ', action.payload);
+    console.groupEnd();
+
+    next(action)
+}
