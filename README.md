@@ -34,3 +34,18 @@ https://github.com/Chajaesik01/devcamp-onboarding-swimdiary
 ###  효율적인 수강생 관리와 소통을 위한 도파밍의 인트라넷 서비스
 
 https://github.com/Dev-FE-2/toy-project1-team2-intranet-project
+
+## 3.토이 프로젝트 2
+###  병원 직원들을 대상으로하는 업무 일정공유 및 ERP System
+
+https://github.com/Dev-FE-2/toy-project2-team3
+
+## 4.토이 프로젝트 3
+###  당신의 운동 파트너 WeFit: 운동 영상을 저장하고 공유하며 소통하는 피트니스 플랫폼
+
+https://github.com/Dev-FE-2/toy-project3-team2-wefit
+
+## 5.사이드 프로젝트
+###  왓챠 홈페이지를 벤치마킹하여 UI제작 및 영화 회원  서비스
+
+https://github.com/Team-HandinHand/Side-project-HandinHand
