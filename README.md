@@ -8,7 +8,7 @@
 
 일주일주기로 공부 내용 업로드
 
-날짜 | 강의 내용 | ""
+날짜 | 강의 내용 | 비고
 --|:--:|--:
 9월23일~9월 27일 | Git/Github |   
 9월 30일~ 10월 4일|  HTML/CSS | 
@@ -44,6 +44,11 @@ https://github.com/Dev-FE-2/toy-project2-team3
 ###  당신의 운동 파트너 WeFit: 운동 영상을 저장하고 공유하며 소통하는 피트니스 플랫폼
 
 https://github.com/Dev-FE-2/toy-project3-team2-wefit
+
+## 5. 파이널 프로젝트
+### AiVARTAR
+
+https://github.com/FC-DEV2-FinalProject/Charmander_FE
 
 ## 5.사이드 프로젝트
 ###  왓챠 홈페이지를 벤치마킹하여 UI제작 및 영화 회원  서비스
