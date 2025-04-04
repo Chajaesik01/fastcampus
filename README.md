@@ -15,6 +15,9 @@
 10월 7일 ~ 10월 11일 | Basic JavaScript |  
 10월 14일 ~ 10월 18일 | Intermediate JavaScript |
 10월 25일 ~ 11월 7일 | Toy Project 1|
+11월 17일 ~ 12월 14일 | Toy Project 2|
+12월 21일 ~ 01월 13일 | Toy Project 3|
+02월 04일 ~ 04월 18일 | Final Project|
 
 
 # 기록 블로그 🌟
